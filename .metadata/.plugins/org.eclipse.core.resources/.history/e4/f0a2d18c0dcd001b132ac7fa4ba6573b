@@ -1,0 +1,32 @@
+# Getting Started
+
+### Parth-Spring-Kubernetes
+
+I have developed two demo services using springboot with deployment in Kubernetes on local using minikube
+
+
+Services :
+
+1. demo-backend: API call that returns the current Hello ‘Name’.
+‘Name’ should be set from an environment variable. E.g. if $NAME = Parth
+so it should print "Hello Parth”
+
+2. demo-frontend: Calls backend and prints the string returned from backend and
+appends the date and time. E.g. It should print "01/01/2020 12:00 Hello
+Parth", when curl from the frontend service’s pod or if open in the
+browser.
+
+###Prerequisites
+Java IDE (I am using SpringSTS
+Maven
+Docker
+Helm
+minikubes on the Kubernetes cluster
+
+#####System Configuration at time of test
+Ubuntu - Version 18
+STS 3+
+Maven - Version 3.6.1
+Docker version 18.09.7, build 2d0083d
+Kubernetes - v1.15.5
+Helm - v2.14.3
