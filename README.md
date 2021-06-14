@@ -5,7 +5,7 @@
 I have developed two demo services using springboot with deployment in Kubernetes on local using minikube
 
 
-Services :
+##### Services :
 
 1. demo-backend: API call that returns the current Hello ‘Name’.
 ‘Name’ should be set from an environment variable. E.g. if $NAME = Parth
@@ -18,14 +18,13 @@ appends the date and time. E.g. It should print "01/01/2020 12:00 Hello
 Parth", when curl from the frontend service’s pod or if open in the
 browser.
 
-#####Prerequisites
+##### Prerequisites
 Java IDE (I am using SpringSTS
 Maven
 Docker
-Helm
 minikubes on the Kubernetes cluster
 
-#####System Configuration at time of test
+##### System Configuration at time of test
 Ubuntu - Version 18
 STS 3+
 Maven - Version 3.6.1
@@ -76,7 +75,7 @@ docker build --tag=demo-backend:latest .
 docker build --tag=demo-frontend:latest .
 
 
-######## backend service deployment steps
+###### Backend service deployment steps
 
 We can now trigger the deployment:
 
@@ -103,7 +102,7 @@ demo-backend    ClusterIP   10.102.17.114   <none>        8081/TCP         30s
 As we can see, the Service is of type ClusterIP, and it doesn't provide an external port in the range 30000-32767
 
 
-######## frontend service deployment steps
+##### Frontend service deployment steps
 
 We can now trigger this deployment the same way:
 
