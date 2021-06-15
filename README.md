@@ -122,7 +122,7 @@ $> minikube service demo-frontend
 This command will again start our default browser, opening <NodeIP>:<NodePort>, which is http://192.168.99.100:30001
 
 
-######## For Helm Chart i have refre this link and generated for both services
+######## For Helm Chart Below Mention Steps Done
 
 1. I have installed the Helm.
 2. Then using Helm Create <name> command created the all files and templates.
