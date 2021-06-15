@@ -5,7 +5,7 @@
 I have developed two demo services using springboot with deployment in Kubernetes on local using minikube
 
 
-##### Services :
+Services :
 
 1. demo-backend: API call that returns the current Hello ‘Name’.
 ‘Name’ should be set from an environment variable. E.g. if $NAME = Parth
@@ -18,13 +18,14 @@ appends the date and time. E.g. It should print "01/01/2020 12:00 Hello
 Parth", when curl from the frontend service’s pod or if open in the
 browser.
 
-##### Prerequisites
+#####Prerequisites
 Java IDE (I am using SpringSTS
 Maven
 Docker
+Helm
 minikubes on the Kubernetes cluster
 
-##### System Configuration at time of test
+#####System Configuration at time of test
 Ubuntu - Version 18
 STS 3+
 Maven - Version 3.6.1
@@ -75,7 +76,7 @@ docker build --tag=demo-backend:latest .
 docker build --tag=demo-frontend:latest .
 
 
-###### Backend service deployment steps
+######## backend service deployment steps
 
 We can now trigger the deployment:
 
@@ -102,7 +103,7 @@ demo-backend    ClusterIP   10.102.17.114   <none>        8081/TCP         30s
 As we can see, the Service is of type ClusterIP, and it doesn't provide an external port in the range 30000-32767
 
 
-##### Frontend service deployment steps
+######## Frontend service deployment steps
 
 We can now trigger this deployment the same way:
 
@@ -119,5 +120,13 @@ After that, we can finally call the REST endpoint of the frontend application:
 $> minikube service demo-frontend
 
 This command will again start our default browser, opening <NodeIP>:<NodePort>, which is http://192.168.99.100:30001
+
+
+######## For Helm Chart i have refre this link and generated for both services
+
+1. I have installed the Helm.
+2. Then using Helm Create <name> command created the all files and templates.
+3. In Value.yml manual ly added app name,chart name and minikube NodePort.
+4. then i using Helm installed command deploy the charts and then able to access them on browser.
 
 
