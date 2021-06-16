@@ -42,24 +42,29 @@ Deploy the application using config files
 
 After completing the installation, we can start Minikube, set VirtualBox as Hypervisor, and configure kubectl to talk to the cluster called minikube:
 
-$> minikube start
-$> minikube config set vm-driver virtualbox
-$> kubectl config use-context minikube
+1. $> minikube start
+2. $> minikube config set vm-driver virtualbox
+3. $> kubectl config use-context minikube
+
 After that, we can verify that kubectl communicates correctly with our cluster:
 
-$> kubectl cluster-info
+4. $> kubectl cluster-info
+
 The output should look like this:
 
 Kubernetes master is running at https://192.168.99.100:8443
+
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 At this stage, we'll keep the IP in the response close (192.168.99.100 in our case). We'll later refer to that as NodeIP, which is needed to call resources from outside of the cluster, e. g. from our browser.
 
 Finally, we can inspect the state of our cluster:
 
-$> minikube dashboard
+5. $> minikube dashboard
+
 This command opens a site in our default browser, which provides an extensive overview about the state of our cluster.
 
 #### Demo Application
+
 As our cluster is now running and ready for deployment, we need a demo application.
 
 For this purpose, we'll create a simple “Hello world” application, consisting of two Spring Boot services, which we'll call frontend and backend.
