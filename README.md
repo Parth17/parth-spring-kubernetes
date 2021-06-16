@@ -71,6 +71,8 @@ The backend provides one REST endpoint on port 8081, returning a String containi
 
 Before deployment we need to create docker image for both services using below commands
 
+(Please change the path for src code and target as per your system in docker Image)
+
 docker build --tag=demo-backend:latest .
 
 docker build --tag=demo-frontend:latest .
