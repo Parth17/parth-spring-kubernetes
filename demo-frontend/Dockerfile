@@ -12,6 +12,6 @@ RUN mvn -f /home/app/parth-spring-kubernetes/demo-frontend/pom.xml clean package
 #
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
-COPY --from=build /home/app/parth-spring-kubernetes/demo-frontend/target/demo-frontend-0.0.1-SNAPSHOT.jar /usr/local/lib/app.jar
+COPY --from=build /home/app/parth-spring-kubernetes/demo-frontend/target/demo-frontend-0.0.1-SNAPSHOT.jar /usr/local/lib/demo2.jar
 EXPOSE 8082
-ENTRYPOINT ["java","-jar","/usr/local/lib/app.jar"]
+ENTRYPOINT ["nohup java","-jar","/usr/local/lib/demo2.jar &"]
