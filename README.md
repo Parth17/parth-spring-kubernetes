@@ -87,11 +87,11 @@ docker build --tag=demo-frontend:latest .
 
 We can now trigger the deployment:
 
-$> kubectl create -f backend-deployment.yaml
+1. $> kubectl create -f backend-deployment.yaml
 
 Let's verify that the deployment was successful:
 
-$> kubectl get deployments
+2. $> kubectl get deployments
 
 The output looks like this:
 
@@ -100,7 +100,7 @@ demo-backend   3         3         3            3           25s
 
 We can also check whether the Service is available:
 
-$> kubectl get services
+3. $> kubectl get services
 
 The output looks like this:
 
@@ -114,17 +114,17 @@ As we can see, the Service is of type ClusterIP, and it doesn't provide an exter
 
 We can now trigger this deployment the same way:
 
-$> kubectl create -f frontend-deployment.yaml
+1. $> kubectl create -f frontend-deployment.yaml
 
 Let's quickly verify that the deployment was successful and the Service is available:
 
-$> kubectl get deployments
+2. $> kubectl get deployments
 
-$> kubectl get services
+3. $> kubectl get services
 
 After that, we can finally call the REST endpoint of the frontend application:
 
-$> minikube service demo-frontend
+4. $> minikube service demo-frontend
 
 This command will again start our default browser, opening <NodeIP>:<NodePort>, which is http://192.168.99.100:30001
 
