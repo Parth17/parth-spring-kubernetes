@@ -71,7 +71,9 @@ For this purpose, we'll create a simple “Hello world” application, consistin
 
 The backend provides one REST endpoint on port 8081, returning a String containing its env name and date formate. The frontend is available on port 8082, it will simply call the backend endpoint and return its response.
 
-We have to make sure here that we trigger the build process on the Docker host of the Minikube cluster, otherwise, Minikube won't find the images later during deployment. Furthermore, the workspace on our host must be mounted into the Minikube VM:
+We have to make sure here that we trigger the build process on the Docker host of the Minikube cluster, otherwise, Minikube won't find the images later during deployment. Furthermore, the workspace on our host must be mounted into the Minikube VM: 
+
+minikube mount <source directory>:<target directory> Example minikube mount $HOME:/host
 
 1. $> minikube ssh
 2. $> cd /c/workspace/tutorials/spring-cloud/spring-cloud-kubernetes/demo-backend
